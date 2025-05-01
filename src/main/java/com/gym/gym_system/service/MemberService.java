@@ -1,5 +1,6 @@
 package com.gym.gym_system.service;
 
+import com.gym.gym_system.dto.MemberDTO;
 import com.gym.gym_system.entity.Member;
 import com.gym.gym_system.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,18 +23,22 @@ public class MemberService {
         return memberRepository.findById(id);
     }
 
-    public Member createMember(Member member) {
+    public Member createMember(MemberDTO dto) {
+        Member member = new Member();
+        member.setName(dto.getName());
+        member.setPhoneNumber(dto.getPhoneNumber());
         return memberRepository.save(member);
     }
 
-    public Member updateMember(Long id, Member updatedMember) {
-        updatedMember.setId(id);
-        return memberRepository.save(updatedMember);
+    public Member updateMember(Long id, MemberDTO dto) {
+        Member member = memberRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Member not found"));
+        member.setName(dto.getName());
+        member.setPhoneNumber(dto.getPhoneNumber());
+        return memberRepository.save(member);
     }
 
     public void deleteMember(Long id) {
         memberRepository.deleteById(id);
     }
 }
-
-

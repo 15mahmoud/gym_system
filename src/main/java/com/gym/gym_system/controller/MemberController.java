@@ -1,5 +1,6 @@
 package com.gym.gym_system.controller;
 
+import com.gym.gym_system.dto.MemberDTO;
 import com.gym.gym_system.entity.Member;
 import com.gym.gym_system.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/packages")
+@RequestMapping("/members")
 public class MemberController {
 
     @Autowired
@@ -26,13 +27,13 @@ public class MemberController {
     }
 
     @PostMapping
-    public Member createMember(@RequestBody Member member) {
-        return memberService.createMember(member);
+    public Member createMember(@RequestBody MemberDTO dto) {
+        return memberService.createMember(dto);
     }
 
     @PutMapping("/{id}")
-    public Member updateMember(@PathVariable Long id, @RequestBody Member updateMember) {
-        return memberService.updateMember(id, updateMember);
+    public Member updateMember(@PathVariable Long id, @RequestBody MemberDTO dto) {
+        return memberService.updateMember(id, dto);
     }
 
     @DeleteMapping("/{id}")
@@ -40,4 +41,3 @@ public class MemberController {
         memberService.deleteMember(id);
     }
 }
-

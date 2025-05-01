@@ -12,8 +12,12 @@ import java.util.Optional;
 @RequestMapping("/packages")
 public class PackageController {
 
-    @Autowired
-    private PackageService packageService;
+
+    private final PackageService packageService;
+
+    public PackageController(PackageService packageService) {
+        this.packageService = packageService;
+    }
 
     @GetMapping
     public List<GymPackage> getAllPackages() {
@@ -30,10 +34,10 @@ public class PackageController {
         return packageService.createPackage(gymPackage);
     }
 
-    @PutMapping("/{id}")
-    public GymPackage updatePackage(@PathVariable Long id, @RequestBody GymPackage updatedPackage) {
-        return packageService.updatePackage(id, updatedPackage);
-    }
+//    @PutMapping("/{id}")
+//    public GymPackage updatePackage(@PathVariable Long id, @RequestBody GymPackage updatedPackage) {
+//        return packageService.updatePackage(id, updatedPackage);
+//    }
 
     @DeleteMapping("/{id}")
     public void deletePackage(@PathVariable Long id) {

@@ -26,10 +26,10 @@ public class PackageService {
         return packageRepository.save(pack);
     }
 
-    public GymPackage updatePackage(Long id, GymPackage updatedPack) {
-        updatedPack.setId(id);
-        return packageRepository.save(updatedPack);
-    }
+//    public GymPackage updatePackage(Long id, GymPackage updatedPack) {
+//        updatedPack.setId(id);
+//        return packageRepository.save(updatedPack);
+//    }
 
     public void deletePackage(Long id) {
         packageRepository.deleteById(id);

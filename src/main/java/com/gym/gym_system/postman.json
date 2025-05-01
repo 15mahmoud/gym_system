@@ -1,0 +1,257 @@
+{
+  "info": {
+    "_postman_id": "abcd-1234-abcd-5678",
+    "name": "Gym Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Members",
+      "item": [
+        {
+          "name": "Create Member",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"John Doe\",\"phoneNumber\":\"1234567890\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/members",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["members"]
+            }
+          }
+        },
+        {
+          "name": "Get All Members",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/members",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["members"]
+            }
+          }
+        },
+        {
+          "name": "Get Member by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/members/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["members", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Member",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/members/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["members", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Subscriptions",
+      "item": [
+        {
+          "name": "Create Subscription",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"memberId\": 1, \"packageId\": 2, \"startDate\": \"2025-05-01\", \"endDate\": \"2025-06-01\", \"amountPaid\": 500.0}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/subscriptions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["subscriptions"]
+            }
+          }
+        },
+        {
+          "name": "Get All Subscriptions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/subscriptions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["subscriptions"]
+            }
+          }
+        },
+        {
+          "name": "Get Subscription by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/subscriptions/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["subscriptions", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Subscription",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/subscriptions/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["subscriptions", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Attendances",
+      "item": [
+        {
+          "name": "Create Attendance",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"memberId\": 1, \"date\": \"2025-05-01\", \"time\": \"08:00:00\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/attendances",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["attendances"]
+            }
+          }
+        },
+        {
+          "name": "Get All Attendances",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/attendances",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["attendances"]
+            }
+          }
+        },
+        {
+          "name": "Get Attendance by Member ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/attendances/member/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["attendances", "member", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Attendance",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/attendances/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["attendances", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Gym Packages",
+      "item": [
+        {
+          "name": "Create Gym Package",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Basic Package\", \"price\": 100.0, \"numberOfDays\": 30, \"includesCardio\": true}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/packages",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["packages"]
+            }
+          }
+        },
+        {
+          "name": "Get All Packages",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/packages",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["packages"]
+            }
+          }
+        },
+        {
+          "name": "Get Package by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/packages/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["packages", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Package",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/packages/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["packages", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
